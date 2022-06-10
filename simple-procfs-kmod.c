@@ -61,8 +61,8 @@ static ssize_t myread(struct file *file, char __user *ubuf, size_t count, loff_t
 }
 
 static struct proc_ops myops = {
-    .proc_read = seq_read,
-    .proc_write = my_proc_write};
+    .proc_read = myread,
+    .proc_write = mywrite};
 
 static int simple_init(void)
 {
